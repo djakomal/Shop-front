@@ -68,14 +68,14 @@ const IcoPackage = () => (
   </svg>
 );
 const IcoBarChart = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a"strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="18" y1="20" x2="18" y2="10"/>
     <line x1="12" y1="20" x2="12" y2="4"/>
     <line x1="6"  y1="20" x2="6"  y2="14"/>
   </svg>
 );
 const IcoActivity = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a"strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
   </svg>
 );
@@ -163,7 +163,7 @@ export default function DashboardPage() {
         </div>
         <p style={{ fontWeight: 700, color: '#0f0f0f', fontSize: 16, marginBottom: 8 }}>Impossible de charger le tableau de bord</p>
         <p style={{ fontSize: 13, color: '#16a34a', marginBottom: 14 }}>{error}</p>
-        <div style={{ padding: '10px 18px', borderRadius: 10, background: '#f0fdf4', color: '#1a1a1a', fontSize: 12, display: 'inline-block' }}>
+        <div style={{ padding: '10px 18px', borderRadius: 10, background: '#fafafa', color: '#1a1a1a', fontSize: 12, display: 'inline-block' }}>
           💡 Démarrez le backend : <code style={{ fontWeight: 600 }}>node server.js</code>
         </div>
       </div>
@@ -189,9 +189,9 @@ export default function DashboardPage() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 16 }}>
-          <StatCard icon={<IcoCart/>}    label="Ventes aujourd'hui"     value={String(agentStats.sales_today)}   bg="#ccfbf1" iconColor="#0d9488" border="#99f6e4" sub="transactions" />
-          <StatCard icon={<IcoTrend/>}   label="Total revenus"          value={fmt(agentStats.total_revenue)}    bg="#d1fae5" iconColor="#059669" border="#6ee7b7" sub={`${agentStats.total_sales} ventes`} />
-          <StatCard icon={<IcoPackage/>} label="Produits disponibles"   value={String(agentStats.total_products)} bg="#ecfccb" iconColor="#65a30d" border="#d9f99d" sub="références actives" />
+          <StatCard icon={<IcoCart/>}    label="Ventes aujourd'hui"     value={String(agentStats.sales_today)}   bg="#ccfbf1" iconColor="#404040" border="#e5e5e5" sub="transactions" />
+          <StatCard icon={<IcoTrend/>}   label="Total revenus"          value={fmt(agentStats.total_revenue)}    bg="#d1fae5" iconColor="#404040" border="#d4d4d4" sub={`${agentStats.total_sales} ventes`} />
+          <StatCard icon={<IcoPackage/>} label="Produits disponibles"   value={String(agentStats.total_products)} bg="#f5f5f5" iconColor="#737373" border="#e5e5e5" sub="références actives" />
         </div>
 
         <div className="p-4 sm:p-6" style={{ background: '#fff', border: '1px solid #f5f5f5', borderRadius: 14 }}>
@@ -215,7 +215,7 @@ export default function DashboardPage() {
                   <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#16a34a' }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fontSize: 11, fill: '#16a34a' }} axisLine={false} tickLine={false} tickFormatter={fmtK} width={50} />
                   <Tooltip content={<TipRevenue />} />
-                  <Area type="monotone" dataKey="revenue" stroke="#16a34a" strokeWidth={2.5} fill="url(#gradAgent)" dot={{ fill: '#16a34a', r: 4, strokeWidth: 0 }} activeDot={{ r: 6, fill: '#1a1a1a', strokeWidth: 0 }} />
+                  <Area type="monotone" dataKey="revenue" stroke="#1a1a1a"strokeWidth={2.5} fill="url(#gradAgent)" dot={{ fill: '#16a34a', r: 4, strokeWidth: 0 }} activeDot={{ r: 6, fill: '#1a1a1a', strokeWidth: 0 }} />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -287,7 +287,7 @@ export default function DashboardPage() {
                 <p style={{ fontSize: 12, color: '#16a34a', marginTop: 3 }}>7 derniers jours — {fmt(weekRev)}</p>
               </div>
               {hasData && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, padding: '4px 10px', borderRadius: 8, background: '#f0fdf4', color: '#1a1a1a', border: '1px solid #bbf7d0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, padding: '4px 10px', borderRadius: 8, background: '#fafafa', color: '#1a1a1a', border: '1px solid #bbf7d0' }}>
                   <IcoArrow />&nbsp;{days[days.length - 1]?.sales || 0} ventes hier
                 </div>
               )}
@@ -298,8 +298,8 @@ export default function DashboardPage() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f5" vertical={false} />
                   <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#16a34a' }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fontSize: 11, fill: '#16a34a' }} axisLine={false} tickLine={false} tickFormatter={fmtK} width={50} />
-                  <Tooltip content={<TipRevenue />} cursor={{ fill: '#f0fdf4' }} />
-                  <Bar dataKey="revenue" fill="#16a34a" radius={[6, 6, 0, 0]} />
+                  <Tooltip content={<TipRevenue />} cursor={{ fill: '#fafafa' }} />
+                  <Bar dataKey="revenue" fill="#1a1a1a"radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
