@@ -390,3 +390,16 @@ textarea:focus-visible {
 
 /* ─── PRINT ──────────────────────────────────────────────────────────────────── */
 @media print { .no-print { display: none !important; } }
+
+/* ─── STARFIELD ───────────────────────────────────────────────────────────────── */
+.starfield-star {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.starfield-container {
+  z-index: 0;
+}
+
+.starfield-container svg circle {
+  will-change: transform, opacity;
+}
